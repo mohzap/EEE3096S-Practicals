@@ -19,7 +19,7 @@ GPIO.setup(chan_list, GPIO.OUT) #set GPIO 17,22 and 27 to output mode for LEDs
 chano_list = [16,18]
 GPIO.setup(chano_list, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #set GPIO 23 and 24 to inputs for buttons and pull down configuration
 def callback_method(channel):
-    '''
+    
     global count
     print("Button 1") # Used to indicate that the method is run when button is pressed
     #One LED toggle by switch
@@ -29,7 +29,7 @@ def callback_method(channel):
     else:
         GPIO.output(11, GPIO.LOW)
         count=0
-    '''
+    
 
     '''
     #Increase count variable and display count value on LEDs
@@ -124,12 +124,12 @@ GPIO.add_event_detect(18, GPIO.RISING, callback=callback_method2, bouncetime=300
 def main():
     print("Code is running") #Used to check if code is cycling
     time.sleep(1) #One second time delay ensuring that the LED is off for one second
-    
+    '''
     # Toggle one LED high
     GPIO.output(11, GPIO.HIGH) #Sets the GPIO11 high so that the LED goes on
     time.sleep(1) #One second time delay to ensure that the LED is on for one second
     GPIO.output(11, GPIO.LOW) #Sets GPIO11 low so the LED goes off
-    
+    '''
 # Only run the functions if 
 if __name__ == "__main__":
     # Make sure the GPIO is stopped correctly
